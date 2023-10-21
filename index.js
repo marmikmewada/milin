@@ -1,6 +1,8 @@
 const burgers = document.getElementsByClassName("hamburger");
 const crosses = document.getElementsByClassName("cross");
 const menuItems = document.getElementsByClassName("small-menu-list");
+const elements = document.getElementsByClassName("L")
+
 // Loop through all elements with class "hamburger" and add click event listeners
 for (const burger of burgers) {
     burger.addEventListener("click", () => {
@@ -22,6 +24,18 @@ for (const cross of crosses) {
         burgers[0].removeAttribute("id");
     });
 }
+
+for( const element of elements){
+    element.addEventListener("click", ()=>{
+        for(const cross of crosses){
+            cross.setAttribute("id", "hidden");
+        }
+        for (const menuItem of menuItems) {
+            menuItem.setAttribute("id", "hidden");
+        }
+        burgers[0].removeAttribute("id");
+    });
+    };
 
 
 
